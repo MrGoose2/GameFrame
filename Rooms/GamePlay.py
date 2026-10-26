@@ -7,7 +7,7 @@ class GamePlay(Level):
         Level.__init__(self, screen, joysticks)
 
         # add accept object
-        self.add_room_object(Accept(self, 1040, 600))
+        self.add_room_object(Accept(self, 440, 600))
 
         # add deny object
         self.add_room_object(Deny(self, 10, 600))
