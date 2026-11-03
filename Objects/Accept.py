@@ -2,7 +2,7 @@ from GameFrame import RoomObject
 
 class Accept(RoomObject):
     """
-    The object for displaying the title
+    The object for displaying the Accept button
     """
     def __init__(self, room, x, y):
         RoomObject.__init__(self, room, x, y)

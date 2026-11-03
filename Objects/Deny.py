@@ -2,7 +2,7 @@ from GameFrame import RoomObject
 
 class Deny(RoomObject):
     """
-    The object for displaying the title
+    The object for displaying the deny button
     """
     def __init__(self, room, x, y):
         RoomObject.__init__(self, room, x, y)
