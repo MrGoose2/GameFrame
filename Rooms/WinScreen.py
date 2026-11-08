@@ -1,4 +1,5 @@
 from GameFrame import Level
+from Objects.Win import Win
 
 class WinScreen(Level):
     """
@@ -7,5 +8,5 @@ class WinScreen(Level):
     def __init__(self, screen, joysticks):
         Level.__init__(self, screen, joysticks)
 
-        # set background image
-        self.set_background_image("Win.png")
+        # add win object
+        self.add_room_object(Win(self, 0, 0))

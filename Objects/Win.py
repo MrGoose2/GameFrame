@@ -10,4 +10,4 @@ class Win(RoomObject):
 
         # set image
         image = self.load_image("Win.png")
-        self.set_image(image,1500,914)
+        self.set_image(image,1400,800)
