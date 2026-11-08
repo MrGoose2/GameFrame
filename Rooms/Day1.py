@@ -5,7 +5,7 @@ from Objects.Accept import Accept
 from Objects.GoodTest import GoodTest
 from Objects.BadTest import BadTest
 
-class GamePlay(Level):
+class Day1(Level):
     def __init__(self, screen, joysticks):
         Level.__init__(self, screen, joysticks)
 

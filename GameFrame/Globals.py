@@ -34,7 +34,7 @@ class Globals:
     window_name = 'Game'
 
     # - Set the order of the rooms - #
-    levels = ["WelcomeScreen", "GamePlay", "WinScreen"]
+    levels = ["WelcomeScreen", "Day1", "Day2", "Day3", "WinScreen"]
 
     # - Set the starting level - #
     start_level = 0
