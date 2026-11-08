@@ -1,17 +1,35 @@
+import random
 from GameFrame import Level
-from Objects import Deny
+from Objects.Deny import Deny
 from Objects.Accept import Accept
 from Objects.GoodTest import GoodTest
+from Objects.BadTest import BadTest
 
 class GamePlay(Level):
     def __init__(self, screen, joysticks):
         Level.__init__(self, screen, joysticks)
 
-        # add accept object
-        self.add_room_object(Accept(self, 440, 650))
+        # Pool of email classes
+        self.email_pool = [GoodTest, BadTest, GoodTest]
+        self.current_email = None
 
-        # add deny object
+        # Add buttons to the room
+        self.add_room_object(Accept(self, 440, 650))
         self.add_room_object(Deny(self, 10, 650))
 
-        #add good test object
-        self.add_room_object(GoodTest(self, 5, 10))
+        # Load the first email
+        self.spawn_next_email()
+
+    def spawn_next_email(self):
+        # Delete old email if it exists
+        if self.current_email:
+            self.delete_object(self.current_email)
+            self.current_email = None
+
+        # Spawn next or trigger win screen
+        if len(self.email_pool) > 0:
+            SelectedEmailClass = self.email_pool.pop(random.randrange(len(self.email_pool)))
+            self.current_email = SelectedEmailClass(self, 5, 10)
+            self.add_room_object(self.current_email)
+        else:
+            self.running = False

@@ -6,6 +6,7 @@ class GoodTest(RoomObject):
     """
     def __init__(self, room, x, y):
         RoomObject.__init__(self, room, x, y)
+        self.is_phishing = False
 
         # set image
         image = self.load_image("GoodTest.png")
