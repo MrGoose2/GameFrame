@@ -6,6 +6,7 @@ from Objects.Legit_3 import Legit3
 from Objects.Legit_4 import Legit4
 from Objects.Legit_5 import Legit5
 from Objects.Phishing_2 import Phish2
+from Objects.Rules2 import Rules2
 
 class Day2(Level):
     def __init__(self, screen, joysticks):
@@ -18,6 +19,9 @@ class Day2(Level):
         # Add buttons to the room
         self.add_room_object(Accept(self, 440, 650))
         self.add_room_object(Deny(self, 10, 650))
+
+        #add rules to the room
+        self.add_room_object(Rules2(self, 800, 200))
 
         # Load the first email
         self.spawn_next_email()

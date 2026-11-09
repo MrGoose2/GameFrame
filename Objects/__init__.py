@@ -14,3 +14,6 @@ from Objects.Phishing_3 import Phish3
 from Objects.Phishing_4 import Phish4
 from Objects.Phishing_5 import Phish5
 from Objects.Win import Win
+from Objects.Rules1 import Rules1
+from Objects.Rules2 import Rules2
+from Objects.Rules3 import Rules3
