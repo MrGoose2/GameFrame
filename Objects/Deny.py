@@ -30,3 +30,7 @@ class Deny(RoomObject):
             if current is not None:
                 if current.is_phishing == True:
                     self.room.spawn_next_email()
+                    self.room.correct_sound.play()
+                else:
+                    self.room.incorrect_sound.play()
+                    

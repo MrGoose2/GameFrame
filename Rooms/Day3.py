@@ -1,16 +1,20 @@
 import random
 from GameFrame import Level
+import Objects
 from Objects.Deny import Deny
 from Objects.Accept import Accept
-from Objects.GoodTest import GoodTest
-from Objects.BadTest import BadTest
+from Objects.Legit_6 import Legit6
+from Objects.Legit_7 import Legit7
+from Objects.Phishing_3 import Phish3
+from Objects.Phishing_4 import Phish4
+from Objects.Phishing_5 import Phish5
 
 class Day3(Level):
     def __init__(self, screen, joysticks):
         Level.__init__(self, screen, joysticks)
 
         # Pool of email classes
-        self.email_pool = [GoodTest, BadTest, BadTest, BadTest, GoodTest]
+        self.email_pool = [Legit6, Phish3, Legit7, Phish4, Phish5]
         self.current_email = None
 
         # Add buttons to the room
@@ -33,3 +37,7 @@ class Day3(Level):
             self.add_room_object(self.current_email)
         else:
             self.running = False
+
+        # load sound files
+        self.incorrect_sound = self.load_sound("wrong.mp3")
+        self.correct_sound = self.load_sound("correct.mp3")

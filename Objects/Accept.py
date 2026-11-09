@@ -30,3 +30,6 @@ class Accept(RoomObject):
             if current is not None:
                 if current.is_phishing == False:
                     self.room.spawn_next_email()
+                    self.room.correct_sound.play()
+                else:
+                    self.room.incorrect_sound.play()
